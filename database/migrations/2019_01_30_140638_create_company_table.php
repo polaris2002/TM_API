@@ -16,22 +16,22 @@ class CreateCompanyTable extends Migration
         Schema::create('company', function (Blueprint $table) {
             $table->string('CP_ID', 30);
             $table->tinyInteger('CP_SEQ');
-            $table->string('CP_NM', 100);
-            $table->string('CP_REG_NO', 15);
-            $table->string('CP_CEO', 50);
-            $table->string('CP_COR_NO', 15);
-            $table->string('CP_TEL', 20);
-            $table->string('CP_FAX', 20);
-            $table->string('CP_ZIP', 15);
-            $table->string('CP_ADD', 200);
-            $table->string('CP_TYPE', 200);
-            $table->string('CP_ITEM', 200);
-            $table->string('CP_BANK', 100);
-            $table->binary('CP_SEAL');
-            $table->string('INPUT_ID', 30);
-            $table->timestamp('INPUT_DATE');
-            $table->string('UPDATE_ID', 30);
-            $table->timestamp('UPDATE_DATE');
+            $table->string('CP_NM', 100)->nullable();
+            $table->string('CP_REG_NO', 15)->nullable();
+            $table->string('CP_CEO', 50)->nullable();
+            $table->string('CP_COR_NO', 15)->nullable();
+            $table->string('CP_TEL', 20)->nullable();
+            $table->string('CP_FAX', 20)->nullable();
+            $table->string('CP_ZIP', 15)->nullable();
+            $table->string('CP_ADD', 200)->nullable();
+            $table->string('CP_TYPE', 200)->nullable();
+            $table->string('CP_ITEM', 200)->nullable();
+            $table->string('CP_BANK', 100)->nullable();
+            $table->binary('CP_SEAL')->nullable();
+            $table->string('INPUT_ID', 30)->nullable();
+            $table->timestamp('INPUT_DATE')->nullable();
+            $table->string('UPDATE_ID', 30)->nullable();
+            $table->timestamp('UPDATE_DATE')->nullable();
             $table->primary(['CP_ID', 'CP_SEQ']);
         });
     }

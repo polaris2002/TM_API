@@ -14,8 +14,18 @@ class CreateUserTable extends Migration
     public function up()
     {
         Schema::create('user', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->string('CP_ID', 30);
+            $table->string('US_ID', 30);
+            $table->string('US_PWD', 30);
+            $table->string('US_NM', 50);
+            $table->string('US_DPT', 50);
+            $table->string('US_AUTH', 10);
+            $table->string('INPUT_ID', 30);
+            $table->timestamp('INPUT_DATE');
+            $table->string('UPDATE_ID', 30);
+            $table->timestamp('UPDATE_DATE');
+            $table->primary(['CP_ID', 'US_ID']);
+
         });
     }
 
@@ -26,6 +36,8 @@ class CreateUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        if(Schema::hasTable('user')) {
+            Schema::dropIfExists('user');
+        }
     }
 }
